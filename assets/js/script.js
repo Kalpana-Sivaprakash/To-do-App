@@ -18,6 +18,11 @@ function renderTodos() {
   for (var i = 0; i < todos.length; i++) {
     var todo = todos[i];
 
+    var chkbox = document.createElement('input');
+    chkbox.type = 'checkbox';
+    chkbox.name = 'myCheckbox';
+
+    //debugger;
     var li = document.createElement("li");
     li.textContent = todo;
     li.setAttribute("data-index", i);
@@ -25,42 +30,39 @@ function renderTodos() {
     var button = document.createElement("button");
     button.textContent = "Remove";
 
+    li.appendChild(chkbox);
     li.appendChild(button);
     todoList.appendChild(li);
 
- const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.id = 'myCheckbox';
-    checkbox.name = 'myCheckbox';
-    checkbox.value = 'checkboxValue';
+ 
 
      // Create a label element
-    const label = document.createElement('label');
-    label.htmlFor = 'myCheckbox';
-    label.textContent = 'My Checkbox Label';
+    // const label = document.createElement('label');
+    // label.htmlFor = 'myCheckbox';
+    // label.textContent = 'My Checkbox Label';
 
     // Append the checkbox and label to the container
     // const container = document.getElementById('container');
     // container.appendChild(checkbox);
     // container.appendChild(label);
     
-    li.appendChild(checkbox);
-    todoList.appendChild(label);
+    // li.appendChild(checkbox);
+    // todoList.appendChild(label);
     
     
 
 
     // Set checkbox as initially checked
-    checkbox.checked = true;
+   // checkbox.checked = true;
 
     // Handle change events
-    checkbox.addEventListener('change', function() {
-      if (checkbox.checked) {
-        console.log('Checkbox is checked');
-      } else {
-        console.log('Checkbox is unchecked');
-      }
-    });
+    // checkbox.addEventListener('change', function() {
+    //   if (checkbox.checked) {
+    //     console.log('Checkbox is checked');
+    //   } else {
+    //     console.log('Checkbox is unchecked');
+    //   }
+    // });
   }
 }
 
